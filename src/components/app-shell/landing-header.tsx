@@ -102,18 +102,15 @@ export function LandingHeader({ isAuthenticated }: LandingHeaderProps) {
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <Button
-              ref={triggerRef}
-              aria-label="Open navigation menu"
-              aria-expanded={open}
-              aria-haspopup="menu"
-              variant="ghost"
-              size="icon-sm"
-              className="sm:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <Menu className="size-4" />
-            </Button>
+          <SheetTrigger
+            ref={triggerRef}
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded={open}
+            aria-haspopup="menu"
+            className="sm:hidden inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 w-8 bg-transparent"
+          >
+            <Menu className="size-4" />
           </SheetTrigger>
           <SheetContent
             side="bottom"
