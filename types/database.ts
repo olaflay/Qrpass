@@ -103,7 +103,14 @@ export type Database = {
       }
     }
     Views: Record<string, never>
-    Functions: Record<string, never>
+    Functions: {
+      check_in_attendee: {
+        Args: {
+          p_token_hash: string
+        }
+        Returns: Json
+      }
+    }
     Enums: {
       pass_status: PassStatus
     }
