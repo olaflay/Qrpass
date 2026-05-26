@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Toaster } from "sonner"
 import "../styles/globals.css"
-import "tw-animate-css"
 import { siteConfig } from "@/config/site"
 import { ThemeProvider } from "next-themes"
 
