@@ -81,11 +81,16 @@ const qrValue = buildVerificationUrl({
 })
 
 export default async function Home() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  const isAuthenticated = Boolean(user)
+  let isAuthenticated = false
+  try {
+    const supabase = await createClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    isAuthenticated = Boolean(user)
+  } catch (err) {
+    console.error("Supabase client failed to initialize:", err)
+  }
   const getStartedHref = isAuthenticated ? "/dashboard/events/new" : "/login"
 
   return (
